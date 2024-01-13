@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<style>
+    body {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        background-color: #FAFAFA;
+        font: 12pt "Calibri";
+    }
+
+    * {
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+    }
+
+    .page {
+        width: 210mm;
+        min-height: 297mm;
+        padding: 15mm;
+        margin: 10mm auto;
+        border: 1px #D3D3D3 solid;
+        border-radius: 5px;
+        background: white;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        position: relative;
+    }
+
+    .subpage {
+        padding: 1cm;
+        border: 5px red solid;
+        height: 257mm;
+        outline: 2cm #FFEAEA solid;
+    }
+
+    @page {
+        size: A4;
+        margin: 0;
+    }
+
+    @media print {
+
+        html,
+        body {
+            width: 210mm;
+            height: 297mm;
+        }
+
+        .page {
+            margin: 0;
+            border: initial;
+            border-radius: initial;
+            width: initial;
+            min-height: initial;
+            box-shadow: initial;
+            background: initial;
+            page-break-after: always;
+        }
+    }
+
+    .rangkasurat {
+        margin: 0 auto;
+        background-color: #fff;
+    }
+
+    .tablekop {
+        border-bottom: 5px solid #000;
+        padding: 2px
+    }
+
+    .tengah {
+        text-align: center;
+        line-height: 10px;
+    }
+
+    .detail {
+        text-align: center;
+        line-height: 15px;
+    }
+
+    .title {
+        text-align: center;
+        font-size: 20px;
+    }
+
+    .subtitle {
+        line-height: 25px;
+    }
+
+    .signature-container {
+        margin-top: 30px;
+        overflow: hidden;
+        /* Menangani float */
+    }
+
+    .signature {
+        width: 48%;
+        float: left;
+        margin-right: 2%;
+    }
+
+    .signature img {
+        width: 100px;
+        display: block;
+    }
+
+    .signature p {
+        margin: 10px 0 0;
+    }
+</style>
+
+<body>
+    <div class="book">
+        <div class="page" id="result">
+            <div class="rangkasurat">
+                <table width="100%" class="tablekop">
+                    <tr>
+                        <td> <img src="assets/kaltengkop.jpeg" width="80px"> </td>
+                        <td class="tengah">
+                            <h3 style="margin-top: -5px;">PEMERINTAH PROVINSI KALIMANTAN TENGAH</h3>
+                            <h2>DINAS KESEHATAN</h2>
+                            <div class="detail">
+                                <small>Jln. Yos Sudarso No. 09 Palangka Raya 73112 Telp. (0536) 427039 Fax.
+                                    4270391</small>
+                                <br>
+                                <small>e-mail : dinkes@kalteng.go.id</small>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div>
+                <p class="title">REVISI PERJANJIAN KINERJA TAHUN 2023</p>
+                <p class="subtitle">Dalam rangka mewujudkan manajemen pemerintah yang efektif, transparan dan
+                    akuntable serta
+                    berorientasi pada hasil, kami yang bertanda tangan dibawah ini :</p>
+                <div id="person1"></div>
+                <p class="subtitle" style="margin-top: 3px;">Selanjutnya disebut pihak pertama</p>
+                <div id="person2"></div>
+                <p class="subtitle" style="margin-top: 3px;">Selaku atasan pihak pertama, selanjutnya disebut pihak
+                    kedua</p>
+                <p class="subtitle">
+                    Pihak pertama berjanji akan mewujudkan target kinerja yang seharusnya sesuai lampiran perjanjian
+                    ini, dalam rangka mencapai target kinerja jangka menengah
+                    seperti yang telah ditetapkan dalam dokumen perencanaan. Keberhasilan dan kegagalan pencapaian
+                    target kinerja tersebut menjadi tanggung jawab kami.
+                </p>
+                <p class="subtitle">Pihak kedua akan melakukan supervisi yang diperlukan serta akan melakukan evaluasi
+                    terhadap capaian
+                    kinerja dari perjanjian ini dan mengambil tindakan yang
+                    diperlukan dalam rangka pemberian penghargaan dan sanksi. :</p>
+            </div>
+            <div id="ttd"></div>
+
+        </div>
+    </div>
+
+
+    <script id="person" type="text/x-handlebars-template">
+        <table>
+            <tr>
+                <td style="width: 100px;">Nama</td>
+                <td>:</td>
+                <td style="font-weight: 600;">&nbsp;{{ nama }}</td>
+            </tr>
+            <tr>
+                <td style="width: 100px;">Jabatan</td>
+                <td>:</td>
+                <td>&nbsp;{{ jabatan }}</td>
+            </tr>
+        </table>
+    </script>
+    <script id="tanda-tangan" type="text/x-handlebars-template">
+        <table>
+            <tr>
+                <td style="width: 60%;">Pihak Kedua,</td>
+                <td>Palangka Raya, {{ date }}<br> Pihak Pertama,</td>
+            </tr>
+            <tr>
+                <td style="width: 60%;padding-top: 10px;">{{ secondPerson.jabatan }}</td>
+                <td style="padding-top: 10px;">{{ firstPerson.jabatan }}</td>
+            </tr>
+            <tr>
+                <td style="width: 60%;padding-top: 10px;">
+                    {{#if secondPerson.ttdImg}}
+                        <img src={{ secondPerson.ttdImg }} width="200">
+                    {{/if}}
+                </td>
+                <td style="padding-top: 10px;">
+                    {{#if firstPerson.ttdImg}}
+                        <img src={{ firstPerson.ttdImg }} width="200">
+                    {{/if}}
+                </td>
+            </tr>
+            <tr>
+                <td style="width: 60%;padding-top: 5px;font-weight:600">{{ secondPerson.nama }}</td>
+                <td style="padding-top: 5px;font-weight:600">{{ firstPerson.nama }}</td>
+            </tr>
+            <tr>
+                <td style="width: 60%">
+                    {{ secondPerson.posisi }} <br> 
+                    {{#if secondPerson.nip}}
+                    NIP. {{ secondPerson.nip }}
+                    {{/if}}
+                </td>
+                <td>{{ firstPerson.posisi }} <br> 
+                    {{#if firstPerson.nip}}
+                    NIP. {{ firstPerson.nip }}
+                    {{/if}}
+                </td>
+            </tr>
+        </table>
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.8/handlebars.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
