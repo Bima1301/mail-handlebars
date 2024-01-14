@@ -1,4 +1,4 @@
-function template() {
+function renderTemplate() {
   var personTable = document.getElementById("person").innerHTML;
   var tandaTanganTable = document.getElementById("tanda-tangan").innerHTML;
   var template = Handlebars.compile(personTable);
@@ -6,7 +6,7 @@ function template() {
   var data = {
     date: "10 Januari 2024",
     firstPerson: {
-      nama: "Dr. dr. SUYUTI SYAMSUL, MPM",
+      name: "Dr. dr. SUYUTI SYAMSUL, MPM",
       jabatan: "KEPALA DINAS KESEHATAN PROVINSI KALIMANTAN TENGAH",
       posisi: "Pembina Utama Madya",
       nip: "19680807 200003 1 006",
@@ -14,7 +14,7 @@ function template() {
         "https://i.pinimg.com/originals/f0/a9/93/f0a993fdc4e1d81651f1d820c746fc3f.jpg",
     },
     secondPerson: {
-      nama: "H. SUGIANTO SABRAN, S.IP",
+      name: "H. SUGIANTO SABRAN, S.IP",
       jabatan: "GUBERNUR KALIMANTAN TENGAH",
       posisi: "",
       nip: "",
@@ -31,4 +31,4 @@ function template() {
   document.getElementById("ttd").innerHTML = compileTtd;
 }
 
-template();
+renderTemplate();

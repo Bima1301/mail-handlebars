@@ -126,17 +126,17 @@
                 </table>
             </div>
             <div>
-                <p class="title">RENCANA KINERJA TAHUNAN 2022</p>
+                <p class="title">PERJANJIAN KINERJA TAHUN 2023</p>
                 <div id="table-rkt"></div>
+                <div id="table-anggaran" style="margin-top: 30px;"></div>
                 <div id="ttd" style="margin-top: 50px;"></div>
             </div>
         </div>
 
-
         <script id="html-rkt" type="text/x-handlebars-template">
             <table class="tableRKT" style="width:100%">
                 <tr>
-                    <th>NO</th>
+                    <th style="width: 50px;">NO</th>
                     <th style="width: 250px;">Sasaran Strategis</th>
                     <th style="width: 200px;">Indikator Kerja</th>
                     <th style="text-align: center;">Satuan</th>
@@ -164,18 +164,48 @@
             </table>
         </script>
 
+        <script id="html-anggaran" type="text/x-handlebars-template">
+            <table class="tableRKT" style="width:100%">
+                <tr>
+                    <th style="width: 50px;">NO</th>
+                    <th style="width: 350px;">Program</th>
+                    <th style="width: 200px;">Anggaran</th>
+                    <th style="text-align: center;">Ket</th>
+                </tr>
+                {{#each this}}
+                <tr>
+                    <td style="text-align: center;">
+                        {{math @index "+" 1}}
+                    </td>
+                    <td style="width: 250px;">
+                        {{name}}
+                    </td>
+                    <td style="width: 200px;">
+                        {{anggaran}}
+                    </td>
+                    <td style="text-align: center;">
+                        {{keterangan}}
+                    </td>
+                </tr>
+                {{/each}}
+            </table>
+        </script>
+
         <script id="tanda-tangan" type="text/x-handlebars-template">
             <table>
                 <tr>
-                    <td style="width: 60%;"></td>
+                    <td style="width: 60%;">Pihak Kedua,</td>
                     <td>Palangka Raya, {{ date }}<br> Pihak Pertama,</td>
                 </tr>
                 <tr>
-                    <td style="width: 60%;padding-top: 10px;"></td>
+                    <td style="width: 60%;padding-top: 10px;">{{ secondPerson.jabatan }}</td>
                     <td style="padding-top: 10px;">{{ firstPerson.jabatan }}</td>
                 </tr>
                 <tr>
                     <td style="width: 60%;padding-top: 10px;">
+                        {{#if secondPerson.ttdImg}}
+                            <img src={{ secondPerson.ttdImg }} width="200">
+                        {{/if}}
                     </td>
                     <td style="padding-top: 10px;">
                         {{#if firstPerson.ttdImg}}
@@ -184,7 +214,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td style="width: 60%;padding-top: 5px;font-weight:600"></td>
+                    <td style="width: 60%;padding-top: 5px;font-weight:600">{{ secondPerson.name }}</td>
                     <td style="padding-top: 5px;font-weight:600">{{ firstPerson.name }}</td>
                 </tr>
                 <tr>

@@ -15,8 +15,13 @@ Handlebars.registerHelper("math", function (lvalue, operator, rvalue, options) {
 function renderTemplate() {
   var tandaTanganTable = document.getElementById("tanda-tangan").innerHTML;
   var tandaTangan = Handlebars.compile(tandaTanganTable);
-  var personTable = document.getElementById("html-rkt").innerHTML;
-  var template = Handlebars.compile(personTable);
+
+  var rktTable = document.getElementById("html-rkt").innerHTML;
+  var templateRkt = Handlebars.compile(rktTable);
+
+  var anggaranTable = document.getElementById("html-anggaran").innerHTML;
+  var templateAnggaran = Handlebars.compile(anggaranTable);
+
   var dataUsers = {
     date: "10 Januari 2024",
     firstPerson: {
@@ -35,7 +40,7 @@ function renderTemplate() {
       ttdImg: "",
     },
   };
-  var data = [
+  var datarkt = [
     {
       sasaranStrategis: "Meningkatkan Kualitas Pelayanan Kesehatan",
       indikatorKinerja: "Angka Usia Harapan Hidup (tahun)",
@@ -61,9 +66,34 @@ function renderTemplate() {
       target: "6,7",
     },
   ];
+  var dataAnggaran = [
+    {
+      name: "Program pemenuhan upaya kesehatan perorangan dan upaya kesehatan masyarakat",
+      anggaran: "Rp. 56.511.744.038",
+      keterangan: "",
+    },
+    {
+      name: "Program peningkatan kapasitas sumber daya manusia kesehatan",
+      anggaran: "Rp. 8.827.569.050",
+      keterangan: "",
+    },
+    {
+      name: "Program sediaan farmasi, alat kesehatan dan makanan minuman",
+      anggaran: "Rp. 127.050.000",
+      keterangan: "",
+    },
+    {
+      name: "Program pemberdayaan masyarakat bidang kesehatan",
+      anggaran: "Rp. 870.098.600",
+      keterangan: "",
+    },
+  ];
 
-  var compileTtd = template(data);
+  var compileTtd = templateRkt(datarkt);
   document.getElementById("table-rkt").innerHTML = compileTtd;
+
+  var compileAnggaran = templateAnggaran(dataAnggaran);
+  document.getElementById("table-anggaran").innerHTML = compileAnggaran;
 
   var compileTtd = tandaTangan(dataUsers);
   document.getElementById("ttd").innerHTML = compileTtd;
