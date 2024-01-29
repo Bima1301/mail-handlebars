@@ -142,9 +142,31 @@
                 <p class="subtitle">Dalam rangka mewujudkan manajemen pemerintah yang efektif, transparan dan
                     akuntable serta
                     berorientasi pada hasil, kami yang bertanda tangan dibawah ini :</p>
-                <div id="person1"></div>
+                <table>
+                    <tr>
+                        <td style="width: 100px;">Nama</td>
+                        <td>:</td>
+                        <td style="font-weight: 600;">&nbsp;<< name>></td>
+                    </tr>
+                    <tr>
+                        <td style="width: 100px;">Jabatan</td>
+                        <td>:</td>
+                        <td>&nbsp;<< jabatan>></td>
+                    </tr>
+                </table>
                 <p class="subtitle" style="margin-top: 3px;">Selanjutnya disebut pihak pertama</p>
-                <div id="person2"></div>
+                <table>
+                    <tr>
+                        <td style="width: 100px;">Nama</td>
+                        <td>:</td>
+                        <td style="font-weight: 600;">&nbsp;<< name>></td>
+                    </tr>
+                    <tr>
+                        <td style="width: 100px;">Jabatan</td>
+                        <td>:</td>
+                        <td>&nbsp;<< jabatan>></td>
+                    </tr>
+                </table>
                 <p class="subtitle" style="margin-top: 3px;">Selaku atasan pihak pertama, selanjutnya disebut pihak
                     kedua</p>
                 <p class="subtitle">
@@ -158,69 +180,49 @@
                     kinerja dari perjanjian ini dan mengambil tindakan yang
                     diperlukan dalam rangka pemberian penghargaan dan sanksi. :</p>
             </div>
-            <div id="ttd"></div>
+            <table>
+                <tr>
+                    <td style="width: 65%;">Pihak Kedua,</td>
+                    <td>Palangka Raya, << date>><br> Pihak Pertama,</td>
+                </tr>
+                <tr>
+                    <td style="width: 65%;padding-top: 10px;">
+                        << secondPerson.jabatan>>
+                    </td>
+                    <td style="padding-top: 10px;">
+                        << firstPerson.jabatan>>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 65%;padding-top: 10px;">
+                        <!-- <img src="<< secondPerson.ttdImg >>" width="200"> -->
+                    </td>
+                    <td style="padding-top: 10px;">
+                        <img src="https://i.pinimg.com/originals/f0/a9/93/f0a993fdc4e1d81651f1d820c746fc3f.jpg"
+                            width="200">
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 65%;padding-top: 5px;font-weight:600">
+                        << secondPerson.name>>
+                    </td>
+                    <td style="padding-top: 5px;font-weight:600">
+                        << firstPerson.name>>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 65%">
+                        <br>
+                    </td>
+                    <td>
+                        << firstPerson.posisi>> <br>
+                            NIP. << firstPerson.nip>>
+                    </td>
+                </tr>
+            </table>
 
         </div>
     </div>
-
-
-    <script id="person" type="text/x-handlebars-template">
-        <table>
-            <tr>
-                <td style="width: 100px;">Nama</td>
-                <td>:</td>
-                <td style="font-weight: 600;">&nbsp;{{ name }}</td>
-            </tr>
-            <tr>
-                <td style="width: 100px;">Jabatan</td>
-                <td>:</td>
-                <td>&nbsp;{{ jabatan }}</td>
-            </tr>
-        </table>
-    </script>
-    <script id="tanda-tangan" type="text/x-handlebars-template">
-        <table>
-            <tr>
-                <td style="width: 60%;">Pihak Kedua,</td>
-                <td>Palangka Raya, {{ date }}<br> Pihak Pertama,</td>
-            </tr>
-            <tr>
-                <td style="width: 60%;padding-top: 10px;">{{ secondPerson.jabatan }}</td>
-                <td style="padding-top: 10px;">{{ firstPerson.jabatan }}</td>
-            </tr>
-            <tr>
-                <td style="width: 60%;padding-top: 10px;">
-                    {{#if secondPerson.ttdImg}}
-                        <img src={{ secondPerson.ttdImg }} width="200">
-                    {{/if}}
-                </td>
-                <td style="padding-top: 10px;">
-                    {{#if firstPerson.ttdImg}}
-                        <img src={{ firstPerson.ttdImg }} width="200">
-                    {{/if}}
-                </td>
-            </tr>
-            <tr>
-                <td style="width: 60%;padding-top: 5px;font-weight:600">{{ secondPerson.name }}</td>
-                <td style="padding-top: 5px;font-weight:600">{{ firstPerson.name }}</td>
-            </tr>
-            <tr>
-                <td style="width: 60%">
-                    {{ secondPerson.posisi }} <br> 
-                    {{#if secondPerson.nip}}
-                    NIP. {{ secondPerson.nip }}
-                    {{/if}}
-                </td>
-                <td>{{ firstPerson.posisi }} <br> 
-                    {{#if firstPerson.nip}}
-                    NIP. {{ firstPerson.nip }}
-                    {{/if}}
-                </td>
-            </tr>
-        </table>
-    </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.8/handlebars.min.js"></script>
-    <script src="script.js"></script>
 </body>
 
 </html>

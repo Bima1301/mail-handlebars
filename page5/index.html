@@ -107,7 +107,7 @@
     }
 
     .tableTtd {
-        font-size: 12px;
+        font-size: 14px;
     }
 </style>
 
@@ -135,168 +135,158 @@
             </div>
             <div>
                 <p class="title">B. Target Realisasi Keuangan </p>
-                <div id="table-rkt" style="padding-inline: 20px;"></div>
-                <div id="ttd" style="margin-top: 20px;"></div>
-            </div>
-        </div>
 
-        <script id="html-rkt" type="text/x-handlebars-template">
-            <table class="tableRKT" style="width:100%">
-                <tr>
-                    <th style="width: 50px;" rowspan="2">NO</th>
-                    <th style="width: 100px;" rowspan="2">Program</th>
-                    <th style="width: 450px;" rowspan="2">Kegiatan</th>
-                    <th style="text-align: center;width: 150px;" rowspan="2">Anggaran (Rp.)</th>
-                    <th style="text-align: center;" colspan="4">Target Realisasi</th>
-                    <th style="text-align: center;width: 150px;" rowspan="2">Ket</th>
-                </tr>
-                <tr>
-                    <th style="width: 200px;">TW I</th>
-                    <th style="width: 200px;">TW II</th>
-                    <th style="width: 200px;">TW III</th>
-                    <th style="width: 200px;">TW IV</th>
-                </tr>
-                {{#each this}}
-                    <tr>
-                        <td style="text-align: center;">
-                            {{math @index "+" 1}}
-                        </td>
-                        <td style=" font-weight: 600;" colspan="2">
-                            {{program}}
-                        </td>
-                        <td style="width: 200px;font-weight: 600;">
-                            {{anggaran}}
-                        </td>
-                        <td style="text-align: center;">
-                            {{tw1}}
-                        </td>
-                        <td style="text-align: center;">
-                            {{tw2}}
-                        </td>
-                        <td style="text-align: center;">
-                            {{tw3}}
-                        </td>
-                        <td style="text-align: center;">
-                            {{tw4}}
-                        </td>
-                        <td style="text-align: center;">
-                            {{keterangan}}
-                        </td>
-                    </tr>
-                    {{#each kegiatan}}
+                <div style="padding-inline: 20px;">
+                    <table class="tableRKT" style="width:100%">
+                        <tr>
+                            <th style="width: 50px;" rowspan="2">NO</th>
+                            <th style="width: 100px;" rowspan="2">Program</th>
+                            <th style="width: 450px;" rowspan="2">Kegiatan</th>
+                            <th style="text-align: center;width: 150px;" rowspan="2">Anggaran (Rp.)</th>
+                            <th style="text-align: center;" colspan="4">Target Realisasi</th>
+                            <th style="text-align: center;width: 150px;" rowspan="2">Ket</th>
+                        </tr>
+                        <tr>
+                            <th style="width: 200px;">TW I</th>
+                            <th style="width: 200px;">TW II</th>
+                            <th style="width: 200px;">TW III</th>
+                            <th style="width: 200px;">TW IV</th>
+                        </tr>
+                        <!-- {{#each this}} -->
+                        <tr>
+                            <td style="text-align: center;">
+                                1
+                            </td>
+                            <td style=" font-weight: 600;" colspan="2">
+                                << program>>
+                            </td>
+                            <td style="width: 200px;font-weight: 600;">
+                                << anggaran>>
+                            </td>
+                            <td style="text-align: center;">
+                                << tw1>>
+                            </td>
+                            <td style="text-align: center;">
+                                << tw2>>
+                            </td>
+                            <td style="text-align: center;">
+                                << tw3>>
+                            </td>
+                            <td style="text-align: center;">
+                                << tw4>>
+                            </td>
+                            <td style="text-align: center;">
+                                << keterangan>>
+                            </td>
+                        </tr>
+                        <!-- {{#each kegiatan}} -->
                         <tr>
                             <td style="text-align: center;">
                             </td>
                             <td style=" text-align: center;">
-                                {{math @index "+" 1}} &#41;
+                                1 &#41;
                             </td>
                             <td style="width: 200px;font-weight: 600;">
-                                {{name}}
+                                << name>>
                             </td>
                             <td style="font-weight: 600;">
-                                {{anggaran}}
+                                << anggaran>>
                             </td>
                             <td style="text-align: center;">
-                                {{tw1}}
+                                << tw1>>
                             </td>
                             <td style="text-align: center;">
-                                {{tw2}}
+                                << tw2>>
                             </td>
                             <td style="text-align: center;">
-                                {{tw3}}
+                                << tw3>>
                             </td>
                             <td style="text-align: center;">
-                                {{tw4}}
+                                << tw4>>
                             </td>
                             <td style="text-align: center;">
-                                {{keterangan}}
+                                << keterangan>>
                             </td>
                         </tr>
-                        {{#each list}}
-                            <tr>
-                                <td style="text-align: center;">
-                                </td>
-                                <td style=" text-align: center;">
-                                </td>
-                                <td style="width: 200px;">
-                                    <div style="display: grid; grid-template-columns: 1fr 7fr;">
-                                        <span >
-                                            {{indexToAlphabet @index }}
-                                        </span>
-                                        <span >
-                                            {{name}}
-                                        </span>
-                                    </div>
-                                </td>
-                                <td >
-                                    {{anggaran}}
-                                </td>
-                                <td style="text-align: center;">
-                                    {{tw1}}
-                                </td>
-                                <td style="text-align: center;">
-                                    {{tw2}}
-                                </td>
-                                <td style="text-align: center;">
-                                    {{tw3}}
-                                </td>
-                                <td style="text-align: center;">
-                                    {{tw4}}
-                                </td>
-                                <td style="text-align: center;">
-                                    {{keterangan}}
-                                </td>
-                            </tr>
+                        <!-- {{#each list}} -->
+                        <tr>
+                            <td style="text-align: center;">
+                            </td>
+                            <td style=" text-align: center;">
+                            </td>
+                            <td style="width: 200px;">
+                                <div style="display: grid; grid-template-columns: 1fr 7fr;">
+                                    <span>
+                                        a.
+                                    </span>
+                                    <span>
+                                        << name>>
+                                    </span>
+                                </div>
+                            </td>
+                            <td>
+                                << anggaran>>
+                            </td>
+                            <td style="text-align: center;">
+                                << tw1>>
+                            </td>
+                            <td style="text-align: center;">
+                                << tw2>>
+                            </td>
+                            <td style="text-align: center;">
+                                << tw3>>
+                            </td>
+                            <td style="text-align: center;">
+                                << tw4>>
+                            </td>
+                            <td style="text-align: center;">
+                                << keterangan>>
+                            </td>
+                        </tr>
+                        <!-- {{/each}}
                         {{/each}}
-                    {{/each}}
-                {{/each}}
-            </table>
-        </script>
-        <script id="tanda-tangan" type="text/x-handlebars-template">
-            <table class="tableTtd">
-                <tr>
-                    <td style="width: 70%;"></td>
-                    <td>Palangka Raya, {{ date }}<br> Pihak Pertama,</td>
-                </tr>
-                <tr>
-                    <td style="width: 70%;"></td>
-                    <td >{{ firstPerson.jabatan }}</td>
-                </tr>
-                <tr>
-                    <td style="width: 70%;">
-                    </td>
-                    <td >
-                        {{#if firstPerson.ttdImg}}
-                            <img src={{ firstPerson.ttdImg }} width="200">
-                        {{/if}}
-                    </td>
-                </tr>
-                <tr>
-                    <td style="width: 70%;font-weight:600"></td>
-                    <td style="font-weight:600">{{ firstPerson.name }}</td>
-                </tr>
-                <tr>
-                    <td style="width: 70%">
-                        {{ secondPerson.posisi }} <br> 
-                        {{#if secondPerson.nip}}
-                        NIP. {{ secondPerson.nip }}
-                        {{/if}}
-                    </td>
-                    <td>{{ firstPerson.posisi }} <br> 
-                        {{#if firstPerson.nip}}
-                        NIP. {{ firstPerson.nip }}
-                        {{/if}}
-                    </td>
-                </tr>
-            </table>
-        </script>
-        <script>
-            function indexToAlphabet(index) {
-                return String.fromCharCode(97 + index) + ')';
-            }
-        </script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.8/handlebars.min.js"></script>
-        <script src="script.js"></script>
+                        {{/each}} -->
+                    </table>
+                </div>
+
+                <div style="margin-top: 20px;padding-inline: 20px;">
+                    <table class="tableTtd">
+                        <tr>
+                            <td style="width: 78%;"></td>
+                            <td>Palangka Raya, << date>><br> Pihak Pertama,</td>
+                        </tr>
+                        <tr>
+                            <td style="width: 78%;"></td>
+                            <td>
+                                << firstPerson.jabatan>> qwdqd qwdo quhd ioquwghd qiowudgh
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width: 78%;">
+                            </td>
+                            <td>
+                                <img src="https://i.pinimg.com/originals/f0/a9/93/f0a993fdc4e1d81651f1d820c746fc3f.jpg"
+                                    width="200" width="200" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width: 78%;font-weight:600"></td>
+                            <td style="font-weight:600">
+                                << firstPerson.name>>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width: 78%">
+
+                            </td>
+                            <td>
+                                NIP. << firstPerson.nip>>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
 </body>
 
 </html>
