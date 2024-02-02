@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        background-color: #FAFAFA;
+        font: 12pt "Calibri";
+    }
+
+    * {
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+    }
+
+    .page {
+        width: 210mm;
+        min-height: 297mm;
+        padding: 15mm 15mm 15mm 25mm;
+        margin: 10mm auto;
+        border: 1px #D3D3D3 solid;
+        border-radius: 5px;
+        background: white;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        position: relative;
+    }
+
+    .subpage {
+        padding: 1cm;
+        border: 5px red solid;
+        height: 257mm;
+        outline: 2cm #FFEAEA solid;
+    }
+
+    @page {
+        size: A4;
+        margin: 0;
+    }
+
+    @media print {
+
+        html,
+        body {
+            width: 210mm;
+            height: 297mm;
+        }
+
+        .page {
+            position: relative;
+            margin: 0;
+            border: initial;
+            border-radius: initial;
+            width: initial;
+            min-height: initial;
+            box-shadow: initial;
+            background: initial;
+            page-break-after: always;
+        }
+    }
+
+    p {
+        margin: 0;
+        padding: 0;
+    }
+
+    .dinkes-img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 600px;
+        height: 300px;
+        margin-top: 80px;
+        border-top-left-radius: 90px;
+        border-bottom-right-radius: 90px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        padding: 10px;
+    }
+
+    .header-page {
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin: 8mm 15mm 0 25mm;
+        border-bottom: 2px solid #02a2f7;
+        width: -webkit-fill-available;
+        text-align: end;
+        font-size: 18px;
+        font-weight: 500;
+        padding-bottom: 3px;
+    }
+
+    .border-lb {
+        border: 1px solid #ccc;
+        border-width: 0 0 1px 1px;
+    }
+
+    .content {
+        font-size: 14px;
+        text-align: justify;
+        margin-bottom: 10px;
+        line-height: 1.6;
+    }
+</style>
+
+<body>
+    <div class="book">
+        <div class="page" id="result">
+            <div class="header-page">
+                <span style="border-right: 2px solid #02a2f7; padding-right: 10px;padding-bottom: 3px;">LKIP Triwulan
+                    III Dinas Kesehatan
+                    Provinsi Kalimantan
+                    Tengah</span>
+                <span style="padding-left:2px; color: #02a2f7;padding-bottom: 3px;">2023</span>
+            </div>
+
+            <div style="text-align: center;margin: 40px 0px;">
+                <section style="font-size: 18px; font-weight: 700;">BAB I <br> CAPAIAN KINERJA</section>
+            </div>
+
+            <p class="content">
+                &emsp;&emsp;&ensp; Terwujudnya tata kelola pemerintahan yang baik adalah amanat reformasi
+                birokrasi yang harus diwujudkan dan dilaksanakan oleh seluruh instansi
+                pemerintahan. Oleh karena itu, salah satu langkah yang ditempuh pemerintah
+                dalam mewujudkan tata kelola pemerintahan yang baik adalah diharuskannya
+                setiap instansi pemerintah menyusun laporan akuntabilitas dari pelaksanaan tugas
+                dan fungsi yang dipercayakan kepada setiap instansi pemerintah tersebut atas
+                penggunaan anggaran yang telah digunakan selama satu tahun. Hal ini sesuai
+                dengan Peraturan Pemerintah (PP) Nomor 8 Tahun 2006 perihal Pelaporan
+                Keuangan dan Kinerja Instansi Pemerintah, Peraturan Presiden (Perpres) Nomor
+                29 Tahun 2014 tentang Sistem Akuntabilitas Kinerja Instansi Pemerintah dan
+                Peraturan Menteri Pendayagunaan Aparatur Negara dan Reformasi Birokrasi
+                (Permenpan RB) Nomor 88 Tahun 2021 tentang Evaluasi Akuntabilitas Kinerja
+                Instansi Pemerintah.
+            </p>
+
+            <p class="content">
+                &emsp;&emsp;&ensp; Berdasarkan peraturan tersebut diatas, maka setiap instansi pemerintah
+                berkewajiban menyusun Laporan Kinerja yang merupakan salah satu bentuk
+                pertanggungjawaban instansi pemerintah dalam pelaksanaan program dan
+                kegiatan yang dilaksanakan berdasarkan Rencana Strategis maupun Rencana
+                Kerja tahunan yang dibuat sebelumnya. Selain itu, Laporan Kinerja juga merupakan
+                sarana untuk menilai dan mengevaluasi pencapaian kinerja berdasarkan indikator
+                sasaran yang telah ditetapkan sebelumnya. Oleh sebab itu, untuk menilai
+                pelaksanaan program dan kegiatan serta mengukur sejauh mana pencapaian
+                sasaran sampai akhir Triwulan III Tahun 2023 berdasarkan indikator yang ada,
+                maka disusunlah Laporan Kinerja Dinas Kesehatan Provinsi Kalimantan Tengah
+                Triwulan III Tahun 2023.
+            </p>
+            <p class="content">
+                &emsp;&emsp;&ensp; Sasaran merupakan hasil yang akan dicapai secara nyata oleh instansi
+                pemerintah dalam rumusan yang lebih spesifik, terukur, dalam kurun waktu yang
+                lebih pendek dari tujuan. Dalam sasaran telah ditetapkan indikator sasaran sebagai
+                ukuran tingkat keberhasilan pencapaian sasaran untuk diwujudkan pada tahun
+                bersangkutan. Setiap indikator sasaran disertai rencana tingkat capaian (target)
+                masing-masing. Sasaran diupayakan untuk dapat dicapai dalam kurun waktu tertentu secara berkesinambungan
+                sejalan dengan tujuan yang ditetapkan dalam rencana strategis. Dengan demikian, tujuan yang ditetapkan
+                memiliki indikator yang
+                terukur.
+            </p>
+            <p class="content">
+                &emsp;&emsp;&ensp; Pelaksanaan evaluasi dan analisis kinerja dilakukan melalui pengukuran
+                kinerja dengan menggunakan formulir pengukuran kinerja sesuai Peraturan Menteri
+                Pendayagunaan Aparatur Negara dan Reformasi Birokrasi (Permenpan RB) Nomor
+                88 Tahun 2021 tentang Evaluasi Akuntabilitas Kinerja Instansi Pemerintah.
+                Pengukuran kinerja digunakan sebagai dasar untuk menilai keberhasilan atau
+                kegagalan pelaksanaan kegiatan program sesuai dengan sasaran yang telah
+                ditetapkan dalam rangka mewujudkan tujuan dari Dinas Kesehatan Provinsi
+                Kalimantan Tengah. Pengukuran kinerja dimaksud merupakan hasil dari suatu
+                penilaian yang didasarkan pada IKU yang telah diidentifikasi agar sasaran-sasaran
+                strategis dan tujuan strategis sebagai mana telah ditetapkan dalam Peta Strategi
+                Dinas Kesehatan Provinsi Kalimantan Tengah yang menjadi kontrak kinerja pada
+                Tahun 2023 dapat tercapai.
+            </p>
+
+            <p class="content">
+                &emsp;&emsp;&ensp; Program pada dasarnya merupakan kumpulan kegiatan yang dihimpun
+                dalam satu kelompok yang sama secara sendiri maupun bersama-sama untuk
+                mencapai tujuan dan sasaran yang telah ditetapkan. Program merupakan alat bagi
+                pencapaian tujuan dan sasaran. Penetapan program dilakukan dengan melihat
+                kebijakan, tujuan, sasaran, visi dan misi yang telah ditetapkan serta mewujudkan
+                percepatan reformasi birokrasi, dan meningkatkan pelayanan publik dengan
+                kebijakan yang diarahkan untuk
+            </p>
+
+
+        </div>
+    </div>
+</body>
+
+</html>
